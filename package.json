@@ -1,0 +1,21 @@
+{
+  "name": "sandbox",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "parcel serve src/index.html",
+    "build": "rm -rf dist && parcel build src/index.html --no-source-maps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/temelm/sandbox.git"
+  },
+  "author": "Mustafa Temel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/temelm/sandbox/issues"
+  },
+  "homepage": "https://github.com/temelm/sandbox#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
+}
