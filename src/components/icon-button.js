@@ -30,10 +30,13 @@ export function createIconButton (icon, options = {}) {
     button.setAttribute('title', options.title);
   }
 
+<<<<<<< HEAD
   if (typeof options.onClick === 'function') {
     button.addEventListener('click', options.onClick);
   }
 
+=======
+>>>>>>> refs/remotes/origin/main
   button.innerHTML = `
     <i class="${icon}"></i>
   `;
