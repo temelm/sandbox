@@ -1,0 +1,24 @@
+.checkbox-label {
+  cursor: pointer;
+}
+
+.checkbox-label:has(.checkbox:disabled) {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:not(:checked) ~ .fa-check-square {
+  display: none;
+}
+
+.checkbox:checked ~ .fa-square {
+  display: none;
+}
+
+.checkbox-label i {
+  font-size: var(--icon-size);
+}
