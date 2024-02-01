@@ -3,7 +3,9 @@
 }
 
 .button:disabled {
+  color: red;
   cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .button.icon-button {

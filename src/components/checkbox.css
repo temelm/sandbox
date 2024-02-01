@@ -1,0 +1,21 @@
+.checkbox {
+  cursor: pointer;
+}
+
+.checkbox:has(input:disabled) {
+  color: red;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox input:not(:checked) ~ .fa-check-square {
+  display: none;
+}
+
+.checkbox input:checked ~ .fa-square {
+  display: none;
+}
