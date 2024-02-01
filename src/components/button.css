@@ -5,3 +5,8 @@
 .button:disabled {
   cursor: not-allowed;
 }
+
+.button.icon-button {
+  background: none;
+  border: none;
+}
