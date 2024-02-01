@@ -3,12 +3,12 @@ import { isNonEmptyString } from '../utils.js';
 /**
  * @todo: DOCUMENT.
  * @param {object} options
- * @returns {HTMLElement|boolean}
+ * @returns {HTMLElement}
  */
 export function createButton (options = {}) {
   const { label, icon, id, title, disabled, onClick } = options;
 
-  if (!isNonEmptyString(label) && !isNonEmptyString(icon)) return false;
+  if (!isNonEmptyString(label) && !isNonEmptyString(icon)) throw new Error('Button requires a label or an icon.');
 
   const domButton = document.createElement('button');
   domButton.innerHTML = `
