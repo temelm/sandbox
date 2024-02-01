@@ -1,28 +1,35 @@
 import './index.css';
 import { createButton } from './components/button.js';
 
+document.body.style.padding = '1.5rem';
 document.body.style.textAlign = 'center';
 
-document.body.prepend(document.createElement('br'));
-document.body.prepend(document.createElement('br'));
-document.body.appendChild(document.createElement('br'));
-document.body.appendChild(document.createElement('br'));
-
-const buttonList = [];
-buttonList.push(createButton());
-buttonList.push(createButton({}));
-buttonList.push(createButton({ label: 'Button 3' }));
-buttonList.push(createButton({ icon: 'fas fa-cog' }));
-buttonList.push(createButton({ label: 'Button 5', icon: 'fas fa-cog' }));
-buttonList.push(createButton({ label: 'Button 6', icon: 'fas fa-cog', id: 'button-6' }));
-buttonList.push(createButton({ label: 'Button 7', icon: 'fas fa-cog', id: 'button-7', title: 'Button 7' }));
-buttonList.push(createButton({ label: 'Button 8', icon: 'fas fa-cog', id: 'button-8', title: 'Button 8', disabled: true }));
-buttonList.push(createButton({ label: 'Button 9', icon: 'fas fa-cog', id: 'button-9', title: 'Button 9', onClick: () => console.log('Button 9  clicked.') }));
-
-buttonList.forEach(button => {
-  if (button) {
-    document.body.appendChild(button);
-    document.body.appendChild(document.createElement('br'));
-    document.body.appendChild(document.createElement('br'));
+const domStyle = document.createElement('style');
+domStyle.textContent = `
+  section {
+    border-top: 1px solid black;
+    margin-top: 1rem;
+    padding: 1rem;
   }
-});
+
+  section h3,
+  section .button {
+    margin-bottom: 1rem;
+  }
+`;
+document.head.appendChild(domStyle);
+
+const domButtonComponentSection = document.createElement('section');
+domButtonComponentSection.appendChild(document.createElement('h3')).innerText = 'Button Component';
+[
+  createButton({ label: 'Button with label', icon: '', id: 'button1', title: 'Button 1: With label', disabled: false, onClick: undefined }),
+  createButton({ label: '', icon: 'fas fa-cog', id: 'button2', title: 'Button 2: With icon', disabled: false, onClick: undefined }),
+  createButton({ label: 'Button with label and icon', icon: 'fas fa-cog', id: 'button3', title: 'Button 3: With label and icon', disabled: false, onClick: undefined }),
+  createButton({ label: 'Disabled button', icon: 'fas fa-cog', id: 'button4', title: 'Button 4: Disabled', disabled: true, onClick: undefined }),
+  createButton({ label: 'Button with click handler', icon: 'fas fa-cog', id: 'button5', title: 'Button 5: With click handler', disabled: false, onClick: () => console.log('Button 5 clicked')})
+].forEach(button => {
+  domButtonComponentSection.appendChild(button);
+  domButtonComponentSection.appendChild(document.createElement('br'));
+})
+document.body.appendChild(domButtonComponentSection);
+document.body.appendChild(document.createElement('hr'));
