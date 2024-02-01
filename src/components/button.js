@@ -3,7 +3,7 @@ import { isNonEmptyString } from '../utils.js';
 /**
  * @todo: DOCUMENT.
  * @param {object} options
- * @returns {HTMLButtonElement|boolean}
+ * @returns {HTMLElement|boolean}
  */
 export function createButton (options = {}) {
   const { label, icon, id, title, disabled, onClick } = options;
