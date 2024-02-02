@@ -1,0 +1,22 @@
+{
+  "name": "sandbox",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/temelm/sandbox.git"
+  },
+  "author": "Mustafa Temel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/temelm/sandbox/issues"
+  },
+  "homepage": "https://github.com/temelm/sandbox#readme",
+  "devDependencies": {
+    "vite": "^5.0.12"
+  }
+}
