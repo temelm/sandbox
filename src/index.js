@@ -1,6 +1,7 @@
 import './index.css';
 import { createButton } from './components/button.js';
 import { createCheckbox } from './components/checkbox.js';
+import { createRadioButton } from './components/radio-button.js';
 
 document.body.style.padding = '1.5rem';
 document.body.style.textAlign = 'center';
@@ -16,16 +17,19 @@ domStyle.textContent = `
 
   section h3,
   section .button,
-  section .checkbox {
+  section .checkbox,
+  section .radio-button {
     margin-bottom: 1rem;
   }
 
   section .button:last-child,
-  section .checkbox:last-child {
+  section .checkbox:last-child,
+  section .radio-button:last-child {
     margin-bottom: 0;
   }
 
-  section .checkbox {
+  section .checkbox,
+  section .radio-button {
     display: inline-block;
   }
 `;
@@ -38,7 +42,7 @@ const buttonList = [
   createButton({ label: undefined, icon: 'fas fa-cog', tooltip: 'Button 2: With icon only', id: 'button2', disabled: false, onClick: undefined }),
   createButton({ label: 'Button with label and icon', icon: 'fas fa-cog', tooltip: 'Button 3: With label and icon', id: 'button3', disabled: false, onClick: undefined }),
   createButton({ label: 'Disabled button', icon: 'fas fa-cog', tooltip: 'Button 4: Disabled', id: 'button4', disabled: true, onClick: undefined }),
-  createButton({ label: 'Button with click handler', icon: 'fas fa-cog', tooltip: 'Button 5: With click handler', id: 'button5', disabled: false, onClick: () => console.log('Button 5 clicked')})
+  createButton({ label: 'Button with click handler', icon: 'fas fa-cog', tooltip: 'Button 5: With click handler', id: 'button5', disabled: false, onClick: () => console.log('Button 5 clicked') })
 ]
 buttonList.forEach((button, index) => {
   domButtonComponentSection.appendChild(button);
@@ -53,10 +57,25 @@ const checkboxList = [
   createCheckbox({ label: undefined, tooltip: 'Checkbox 2: Without label', id: 'checkbox2', checked: false, disabled: false, onClick: undefined }),
   createCheckbox({ label: 'Checked by default', tooltip: 'Checkbox 3: Checked by default', id: 'checkbox3', checked: true, disabled: false, onClick: undefined }),
   createCheckbox({ label: 'Disabled checkbox', tooltip: 'Checkbox 4: Disabled', id: 'checkbox4', checked: false, disabled: true, onClick: undefined }),
-  createCheckbox({ label: 'Checkbox with click handler', tooltip: 'Checkbox 5: With click handler', id: 'checkbox5', checked: false, disabled: false, onClick: () => console.log('Checkbox 5 clicked')  }),
+  createCheckbox({ label: 'Checkbox with click handler', tooltip: 'Checkbox 5: With click handler', id: 'checkbox5', checked: false, disabled: false, onClick: () => console.log('Checkbox 5 clicked') })
 ]
 checkboxList.forEach((checkbox, index) => {
   domCheckboxComponentSection.appendChild(checkbox);
   if (index + 1 < checkboxList.length) domCheckboxComponentSection.appendChild(document.createElement('br'));
 });
 document.body.appendChild(domCheckboxComponentSection);
+
+const domRadioButtonComponentSection = document.createElement('section');
+domRadioButtonComponentSection.appendChild(document.createElement('h3')).innerText = 'Radio Button Component';
+const radioButtonList = [
+  createRadioButton('Radio button 1', { id: 'radio1' }),
+  createRadioButton('Radio button 2', { id: 'radio2' }),
+  createRadioButton('Radio button 3', { id: 'radio3' }),
+  createRadioButton('Radio button 4', { id: 'radio4' }),
+  createRadioButton('Radio button 5', { id: 'radio5' })
+]
+radioButtonList.forEach((radioButton, index) => {
+  domRadioButtonComponentSection.appendChild(radioButton);
+  if (index + 1 < radioButtonList.length) domRadioButtonComponentSection.appendChild(document.createElement('br'));
+});
+document.body.appendChild(domRadioButtonComponentSection);

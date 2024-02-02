@@ -1,5 +1,6 @@
 @import url("./components/button.css");
 @import url("./components/checkbox.css");
+@import url("./components/radio-button.css");
 
 :root {
   --font-family: "Roboto Mono", monospace;
