@@ -2,21 +2,20 @@ import { isNonEmptyString } from '../utils.js';
 
 /**
  * @todo: DOCUMENT.
- * @param {string} label
- * @param {object} [options]
- * @returns {HTMLElement|boolean}
+ * @param {object} options
+ * @returns {HTMLElement}
  */
-export function createCheckbox (label, options = {}) {
-  if (!isNonEmptyString(label)) return false;
-  if (isNonEmptyString(options.id) && document.getElementById(options.id)) return false;
+export function createCheckbox (options = {}) {
+  const { label, tooltip, id, checked, disabled, onClick } = options;
+
+  if (!isNonEmptyString(label) && !isNonEmptyString(tooltip)) throw new Error('Checkbox requires a label or a tooltip.');
 
   const domCheckbox = document.createElement('input');
   domCheckbox.type = 'checkbox';
-  domCheckbox.classList.add('checkbox');
-  if (isNonEmptyString(options.id)) domCheckbox.id = options.id;
-  if (options.checked) domCheckbox.checked = true;
-  if (options.disabled) domCheckbox.disabled = true;
-  if (typeof options.onClick === 'function') domCheckbox.addEventListener('click', options.onClick);
+  if (isNonEmptyString(id)) domCheckbox.id = id;
+  if (checked) domCheckbox.checked = true;
+  if (disabled) domCheckbox.disabled = true;
+  if (typeof onClick === 'function') domCheckbox.addEventListener('click', onClick);
 
   const domUncheckedIcon = document.createElement('i');
   domUncheckedIcon.classList.add('fas', 'fa-square');
@@ -27,8 +26,9 @@ export function createCheckbox (label, options = {}) {
   domLabel.appendChild(domCheckbox);
   domLabel.appendChild(domUncheckedIcon);
   domLabel.appendChild(domCheckedIcon);
-  domLabel.appendChild(document.createTextNode(` ${label}`));
-  domLabel.classList.add('checkbox-label');
+  if (label) domLabel.appendChild(document.createElement('span')).innerText = ` ${label}`;
+  if (tooltip) domLabel.title = tooltip;
+  domLabel.classList.add('checkbox');
 
   return domLabel;
 }

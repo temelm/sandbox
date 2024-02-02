@@ -1,0 +1,21 @@
+.radio-button {
+  cursor: pointer;
+}
+
+.radio-button:has(input:disabled) {
+  color: red;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.radio-button input {
+  display: none;
+}
+
+.radio-button input:not(:checked) ~ .fa-dot-circle {
+  display: none;
+}
+
+.radio-button input:checked ~ .fa-circle {
+  display: none;
+}
