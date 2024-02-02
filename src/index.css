@@ -1,0 +1,15 @@
+:root {
+  --font-family: "Roboto Mono", monospace;
+  --font-weight: 400;
+  --font-weight-bold: 700;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+}
