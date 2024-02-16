@@ -1,0 +1,16 @@
+:root {
+  --border-color: #a0a0a0;
+  --border-radius: 2px;
+  --border-width: 1px;
+  --font-family: sans-serif;
+  --space-md: 1rem;
+
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+}
