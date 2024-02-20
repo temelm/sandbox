@@ -1,6 +1,7 @@
 import './index.css';
 import { createIcon } from './components/icon.js';
 import { createButton } from './components/button.js';
+import { createCheckbox } from './components/checkbox.js';
 
 const domMain = document.createElement('main');
 document.body.appendChild(domMain);
@@ -46,6 +47,34 @@ domButtonComponent.appendChild(createButton({
   label: 'Button 9', icon: 'fas fa-cat', tooltip: 'Button 9', isPrimary: true,
   id: 'button-9', onClick: () => alert('Button 9')
 }));
+
+const domCheckboxComponent = createSection('Checkbox Component');
+domCheckboxComponent.appendChild(createCheckbox({ label: 'Checkbox 1' }));
+insertLineBreak(domCheckboxComponent);
+domCheckboxComponent.innerHTML += createCheckbox({
+  label: 'Checkbox 2', returnAsString: true
+});
+insertLineBreak(domCheckboxComponent);
+domCheckboxComponent.appendChild(createCheckbox({
+  label: 'Checkbox 3', tooltip: 'Checkbox 3'
+}));
+insertLineBreak(domCheckboxComponent);
+domCheckboxComponent.appendChild(createCheckbox({
+  tooltip: 'Checkbox 4', checked: true
+}));
+insertLineBreak(domCheckboxComponent);
+domCheckboxComponent.appendChild(createCheckbox({
+  label: 'Checkbox 5', id: 'checkbox-5'
+}));
+insertLineBreak(domCheckboxComponent);
+domCheckboxComponent.appendChild(createCheckbox({
+  label: 'Checkbox 6', disabled: true
+}));
+insertLineBreak(domCheckboxComponent);
+domCheckboxComponent.appendChild(createCheckbox({
+  label: 'Checkbox 7', id: 'checkbox-7', onChange: () => alert('Checkbox 7')
+}));
+insertLineBreak(domCheckboxComponent);
 
 /* -------------------------------------------------------------------------- */
 

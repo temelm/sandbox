@@ -1,0 +1,35 @@
+.checkbox-label {
+  align-items: center;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  display: inline-flex;
+  padding: var(--space-sm);
+  transition-duration: var(--transition-duration);
+  transition-property: background-color;
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.checkbox-label:has(.checkbox:disabled) {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.checkbox-label:not(:has(.checkbox:disabled)):hover {
+  background-color: rgb(128, 128, 128, 0.1);
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:not(:checked) ~ .fa-check-square {
+  display: none;
+}
+
+.checkbox:checked ~ .fa-square {
+  display: none;
+}
+
+.checkbox-label span {
+  margin-left: var(--space-sm);
+}
