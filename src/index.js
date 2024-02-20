@@ -2,6 +2,7 @@ import './index.css';
 import { createIcon } from './components/icon.js';
 import { createButton } from './components/button.js';
 import { createCheckbox } from './components/checkbox.js';
+import { createRadioButton } from './components/radio-button.js';
 
 const domMain = document.createElement('main');
 document.body.appendChild(domMain);
@@ -75,6 +76,40 @@ domCheckboxComponent.appendChild(createCheckbox({
   label: 'Checkbox 7', id: 'checkbox-7', onChange: () => alert('Checkbox 7')
 }));
 insertLineBreak(domCheckboxComponent);
+
+const domRadioButtonComponent = createSection('Radio Button Component');
+domRadioButtonComponent.appendChild(createRadioButton({
+  label: 'Radio Button 1A', group: 'group-a'
+}));
+insertLineBreak(domRadioButtonComponent);
+domRadioButtonComponent.innerHTML += createRadioButton({
+  label: 'Radio Button 2A', group: 'group-a', returnAsString: true
+});
+insertLineBreak(domRadioButtonComponent);
+domRadioButtonComponent.appendChild(createRadioButton({
+  label: 'Radio Button 3A', group: 'group-a', checked: true
+}));
+insertLineBreak(domRadioButtonComponent);
+domRadioButtonComponent.appendChild(createRadioButton({
+  label: 'Radio Button 4A', group: 'group-a', disabled: true
+}));
+insertLineBreak(domRadioButtonComponent);
+domRadioButtonComponent.appendChild(createRadioButton({
+  label: 'Radio Button 5A', group: 'group-a', id: 'radio-button-5a'
+}));
+insertLineBreak(domRadioButtonComponent);
+domRadioButtonComponent.appendChild(createRadioButton({
+  label: 'Radio Button 6A', group: 'group-a',
+  onChange: () => alert('Radio Button 6A')
+}));
+insertLineBreak(domRadioButtonComponent);
+domRadioButtonComponent.appendChild(createRadioButton({
+  label: 'Radio Button 1B', group: 'group-b'
+}));
+insertLineBreak(domRadioButtonComponent);
+domRadioButtonComponent.appendChild(createRadioButton({
+  label: 'Radio Button 2B', group: 'group-b', checked: true
+}));
 
 /* -------------------------------------------------------------------------- */
 

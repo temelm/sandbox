@@ -5,7 +5,7 @@ import { createIcon } from './icon.js';
 /**
  * @todo: Write documentation.
  * @param {object} options
- * @returns {HTMLButtonElement}
+ * @returns {HTMLButtonElement|string}
  */
 export function createButton (options = {}) {
   const {

@@ -5,7 +5,7 @@ import { createIcon } from './icon.js';
 /**
  * @todo: Write documentation.
  * @param {object} options
- * @returns {HTMLLabelElement}
+ * @returns {HTMLLabelElement|string}
  */
 export function createCheckbox (options = {}) {
   const {
