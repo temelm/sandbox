@@ -8,7 +8,9 @@ import { createIcon } from './icon.js';
  * @returns {HTMLButtonElement}
  */
 export function createButton (options = {}) {
-  const { label, icon, tooltip, id, disabled, onClick, returnAsString } = options;
+  const {
+    label, icon, tooltip, isPrimary, id, disabled, onClick, returnAsString
+  } = options;
 
   if (!isNonEmptyString(label) && !isNonEmptyString(icon)) {
     throw new Error('Button requires a label or an icon.');
@@ -24,6 +26,9 @@ export function createButton (options = {}) {
   domButton.classList.add('button');
   if (!isNonEmptyString(label)) {
     domButton.classList.add('icon-button');
+  }
+  if (isPrimary === true) {
+    domButton.classList.add('primary-button');
   }
   if (isNonEmptyString(id)) {
     domButton.id = id;

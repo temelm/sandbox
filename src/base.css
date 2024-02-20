@@ -1,11 +1,37 @@
 :root {
-  --border-color: #a0a0a0;
   --border-radius: 2px;
   --border-width: 1px;
   --font-family: sans-serif;
+  --primary-color: teal;
+  --secondary-color: #fce441;
+  --space-sm: 0.5rem;
   --space-md: 1rem;
+  --transition-duration: 0.2s;
+  --transition-timing-function: ease-in-out;
 
+  background-color: var(--background-color-primary);
+  color: var(--text-color);
   text-rendering: optimizeLegibility;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color-primary: #f0f0f0;
+    --background-color-secondary: white;
+    --text-color: #303030;
+
+    color-scheme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color-primary: #303030;
+    --background-color-secondary: #404040;
+    --text-color: white;
+
+    color-scheme: dark;
+  }
 }
 
 * {

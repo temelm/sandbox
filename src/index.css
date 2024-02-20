@@ -1,17 +1,18 @@
 @import url("./base.css");
 
-main {
+* {
+  font-size: 1.25rem;
+}
+
+section {
+  background-color: var(--background-color-secondary);
+  border-radius: 2px;
+  margin: 2rem;
   padding: 2rem;
   text-align: center;
 }
 
 h1 {
+  font-size: 1.75rem;
   margin-bottom: 2rem;
-}
-
-hr {
-  background-color: gray;
-  border: none;
-  height: 1px;
-  margin: 2rem 0;
 }

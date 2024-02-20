@@ -1,3 +1,34 @@
 .button {
+  align-items: center;
+  background-color: gray;
+  border: none;
+  border-radius: var(--border-radius);
+  color: white;
   cursor: pointer;
+  display: inline-flex;
+  padding: var(--space-sm) var(--space-md);
+  transition-duration: var(--transition-duration);
+  transition-property: filter;
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.button:not(:disabled):hover {
+  filter: brightness(120%);
+}
+
+.button.icon-button {
+  padding: var(--space-sm);
+}
+
+.button.primary-button {
+  background-color: var(--primary-color);
+}
+
+.button:has(i) span {
+  margin-left: var(--space-sm);
 }
