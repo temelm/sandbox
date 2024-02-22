@@ -1,24 +1,35 @@
 :root {
+  --alpha: 0.15;
   --border-radius: 2px;
   --border-width: 1px;
+  --color-button-background: var(--color-primary);
+  --color-button-border: var(--color-primary);
+  --color-button-text: var(--color-light-text);
+  --color-dark-text: rgb(var(--color-dark-text-rgb));
+  --color-dark-text-rgb: 48, 48, 48;
+  --color-light-text: rgb(var(--color-light-text-rgb));
+  --color-light-text-rgb: 255, 255, 255;
+  --color-primary: rgb(var(--color-primary-rgb));
+  --color-primary-rgb: 0, 128, 128;
+  --color-secondary: rgb(var(--color-secondary-rgb));
+  --color-secondary-rgb: 252, 228, 65;
   --font-family: sans-serif;
-  --primary-color: teal;
-  --secondary-color: #fce441;
-  --space-sm: 0.5rem;
   --space-md: 1rem;
-  --transition-duration: 0.2s;
+  --space-sm: 0.5rem;
+  --transition-duration:0.25s;
   --transition-timing-function: ease-in-out;
 
-  background-color: var(--background-color-primary);
-  color: var(--text-color);
+  background-color: var(--color-background-primary);
+  color: var(--color-text);
   text-rendering: optimizeLegibility;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background-color-primary: #f0f0f0;
-    --background-color-secondary: white;
-    --text-color: #303030;
+    --color-background-primary: rgb(240, 240, 240);
+    --color-background-secondary: rgb(255, 255, 255);
+    --color-clickable-hover-background: rgba(var(--color-dark-text-rgb), var(--alpha));
+    --color-text: var(--color-dark-text);
 
     color-scheme: light;
   }
@@ -26,9 +37,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color-primary: #303030;
-    --background-color-secondary: #404040;
-    --text-color: white;
+    --color-background-primary: rgb(48, 48, 48);
+    --color-background-secondary: rgb(64, 64, 64);
+    --color-clickable-hover-background: rgba(var(--color-light-text-rgb), var(--alpha));
+    --color-text: var(--color-light-text);
 
     color-scheme: dark;
   }

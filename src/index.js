@@ -45,8 +45,13 @@ domButtonComponent.appendChild(createButton({
 }));
 insertLineBreak(domButtonComponent);
 domButtonComponent.appendChild(createButton({
-  label: 'Button 9', icon: 'fas fa-cat', tooltip: 'Button 9', isPrimary: true,
-  id: 'button-9', onClick: () => alert('Button 9')
+  label: 'Button 9', icon: 'fas fa-cat', tooltip: 'Button 9',
+  variant: 'primary', id: 'button-9', onClick: () => alert('Button 9')
+}));
+insertLineBreak(domButtonComponent);
+domButtonComponent.appendChild(createButton({
+  label: 'Button 10', icon: 'fas fa-cat', tooltip: 'Button 10',
+  variant: 'light', id: 'button-10', onClick: () => alert('Button 10')
 }));
 
 const domCheckboxComponent = createSection('Checkbox Component');
@@ -76,6 +81,9 @@ domCheckboxComponent.appendChild(createCheckbox({
   label: 'Checkbox 7', id: 'checkbox-7', onChange: () => alert('Checkbox 7')
 }));
 insertLineBreak(domCheckboxComponent);
+domCheckboxComponent.appendChild(createCheckbox({
+  label: 'Checkbox 8', tooltip: 'Checkbox 8', variant: 'light'
+}));
 
 const domRadioButtonComponent = createSection('Radio Button Component');
 domRadioButtonComponent.appendChild(createRadioButton({

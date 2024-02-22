@@ -9,7 +9,7 @@ import { createIcon } from './icon.js';
  */
 export function createButton (options = {}) {
   const {
-    label, icon, tooltip, isPrimary, id, disabled, onClick, returnAsString
+    label, icon, tooltip, variant, id, disabled, onClick, returnAsString
   } = options;
 
   if (!isNonEmptyString(label) && !isNonEmptyString(icon)) {
@@ -27,8 +27,8 @@ export function createButton (options = {}) {
   if (!isNonEmptyString(label)) {
     domButton.classList.add('icon-button');
   }
-  if (isPrimary === true) {
-    domButton.classList.add('primary-button');
+  if (variant === 'light') {
+    domButton.classList.add(`${variant}-button`);
   }
   if (isNonEmptyString(id)) {
     domButton.id = id;

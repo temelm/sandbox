@@ -15,7 +15,7 @@
 }
 
 .radio-button-label:not(:has(.radio-button:disabled)):hover {
-  background-color: rgba(128, 128, 128, 0.1);
+  background-color: var(--color-clickable-hover-background);
 }
 
 .radio-button {
