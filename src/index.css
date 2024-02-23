@@ -1,18 +1,29 @@
 @import url("./base.css");
 
+:root {
+  --px: 24px;
+}
+
 * {
-  font-size: 1.25rem;
+  font-size: var(--px);
 }
 
 section {
   background-color: var(--color-background-secondary);
-  border-radius: 2px;
-  margin: 2rem;
-  padding: 2rem;
+  border-radius: var(--border-radius);
+  margin: calc(var(--px) * 2);
+  padding: var(--px);
   text-align: center;
 }
 
-h1 {
-  font-size: 1.75rem;
-  margin-bottom: 2rem;
+#toggle-color-scheme {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-size: var(--px);
+  padding: 0;
+  position: fixed;
+  right: calc(var(--px) / 2);
+  top: calc(var(--px) / 2);
 }

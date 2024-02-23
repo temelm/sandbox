@@ -4,135 +4,107 @@ import { createButton } from './components/button.js';
 import { createCheckbox } from './components/checkbox.js';
 import { createRadioButton } from './components/radio-button.js';
 
+/* -------------------------------------------------------------------------- */
+
+document.documentElement.dataset.colorScheme = 'light';
+
+function getColorScheme () {
+  return document.documentElement.dataset.colorScheme;
+}
+
+function toggleColorScheme () {
+  document.documentElement.dataset.colorScheme
+    = (getColorScheme() === 'light') ? 'dark' : 'light';
+}
+
+document.getElementById('toggle-color-scheme')
+  .addEventListener('click', toggleColorScheme);
+
+/* -------------------------------------------------------------------------- */
+
 const domMain = document.createElement('main');
 document.body.appendChild(domMain);
 
-const domIconComponent = createSection('Icon Component');
-domIconComponent.appendChild(createIcon('fas fa-cat'));
-insertLineBreak(domIconComponent);
-domIconComponent.innerHTML += createIcon('fas fa-cat', true);
-
-const domButtonComponent = createSection('Button Component');
-domButtonComponent.appendChild(createButton({ label: 'Button 1' }));
-insertLineBreak(domButtonComponent);
-domButtonComponent.innerHTML += createButton({
-  label: 'Button 2', returnAsString: true
-});
-insertLineBreak(domButtonComponent);
-domButtonComponent.appendChild(createButton({
-  icon: 'fas fa-cat', tooltip: 'Button 3'
-}));
-insertLineBreak(domButtonComponent);
-domButtonComponent.appendChild(createButton({
-  label: 'Button 4', icon: 'fas fa-cat'
-}));
-insertLineBreak(domButtonComponent);
-domButtonComponent.appendChild(createButton({
-  label: 'Button 5', icon: 'fas fa-cat', tooltip: 'Button 5'
-}));
-insertLineBreak(domButtonComponent);
-domButtonComponent.appendChild(createButton({
-  label: 'Button 6', id: 'button-6'
-}));
-insertLineBreak(domButtonComponent);
-domButtonComponent.appendChild(createButton({
-  label: 'Button 7', disabled: true
-}));
-insertLineBreak(domButtonComponent);
-domButtonComponent.appendChild(createButton({
-  label: 'Button 8', icon: 'fas fa-cat', tooltip: 'Button 8', id: 'button-8',
-  onClick: () => alert('Button 8')
-}));
-insertLineBreak(domButtonComponent);
-domButtonComponent.appendChild(createButton({
-  label: 'Button 9', icon: 'fas fa-cat', tooltip: 'Button 9',
-  variant: 'primary', id: 'button-9', onClick: () => alert('Button 9')
-}));
-insertLineBreak(domButtonComponent);
-domButtonComponent.appendChild(createButton({
-  label: 'Button 10', icon: 'fas fa-cat', tooltip: 'Button 10',
-  variant: 'light', id: 'button-10', onClick: () => alert('Button 10')
-}));
-
-const domCheckboxComponent = createSection('Checkbox Component');
-domCheckboxComponent.appendChild(createCheckbox({ label: 'Checkbox 1' }));
-insertLineBreak(domCheckboxComponent);
-domCheckboxComponent.innerHTML += createCheckbox({
-  label: 'Checkbox 2', returnAsString: true
-});
-insertLineBreak(domCheckboxComponent);
-domCheckboxComponent.appendChild(createCheckbox({
-  label: 'Checkbox 3', tooltip: 'Checkbox 3'
-}));
-insertLineBreak(domCheckboxComponent);
-domCheckboxComponent.appendChild(createCheckbox({
-  tooltip: 'Checkbox 4', checked: true
-}));
-insertLineBreak(domCheckboxComponent);
-domCheckboxComponent.appendChild(createCheckbox({
-  label: 'Checkbox 5', id: 'checkbox-5'
-}));
-insertLineBreak(domCheckboxComponent);
-domCheckboxComponent.appendChild(createCheckbox({
-  label: 'Checkbox 6', disabled: true
-}));
-insertLineBreak(domCheckboxComponent);
-domCheckboxComponent.appendChild(createCheckbox({
-  label: 'Checkbox 7', id: 'checkbox-7', onChange: () => alert('Checkbox 7')
-}));
-insertLineBreak(domCheckboxComponent);
-domCheckboxComponent.appendChild(createCheckbox({
-  label: 'Checkbox 8', tooltip: 'Checkbox 8', variant: 'light'
-}));
-
-const domRadioButtonComponent = createSection('Radio Button Component');
-domRadioButtonComponent.appendChild(createRadioButton({
-  label: 'Radio Button 1A', group: 'group-a'
-}));
-insertLineBreak(domRadioButtonComponent);
-domRadioButtonComponent.innerHTML += createRadioButton({
-  label: 'Radio Button 2A', group: 'group-a', returnAsString: true
-});
-insertLineBreak(domRadioButtonComponent);
-domRadioButtonComponent.appendChild(createRadioButton({
-  label: 'Radio Button 3A', group: 'group-a', checked: true
-}));
-insertLineBreak(domRadioButtonComponent);
-domRadioButtonComponent.appendChild(createRadioButton({
-  label: 'Radio Button 4A', group: 'group-a', disabled: true
-}));
-insertLineBreak(domRadioButtonComponent);
-domRadioButtonComponent.appendChild(createRadioButton({
-  label: 'Radio Button 5A', group: 'group-a', id: 'radio-button-5a'
-}));
-insertLineBreak(domRadioButtonComponent);
-domRadioButtonComponent.appendChild(createRadioButton({
-  label: 'Radio Button 6A', group: 'group-a',
-  onChange: () => alert('Radio Button 6A')
-}));
-insertLineBreak(domRadioButtonComponent);
-domRadioButtonComponent.appendChild(createRadioButton({
-  label: 'Radio Button 1B', group: 'group-b'
-}));
-insertLineBreak(domRadioButtonComponent);
-domRadioButtonComponent.appendChild(createRadioButton({
-  label: 'Radio Button 2B', group: 'group-b', checked: true
-}));
-
-/* -------------------------------------------------------------------------- */
+function insertLineBreak (domParent, count = 2) {
+  for (let i = 0; i < count; i++) {
+    domParent.appendChild(document.createElement('br'));
+  }
+}
 
 function createSection (heading) {
   const domH1 = document.createElement('h1');
   domH1.textContent = heading;
   const domSection = document.createElement('section');
   domSection.appendChild(domH1);
+  insertLineBreak(domSection, 1);
   domMain.appendChild(domSection);
   return domSection;
 }
 
-function insertLineBreak (domParent) {
-  const domBr1 = document.createElement('br');
-  const domBr2 = document.createElement('br');
-  domParent.appendChild(domBr1);
-  domParent.appendChild(domBr2);
+/* -------------------------------------------------------------------------- */
+
+const domIconComponent = createSection('Icon Component');
+domIconComponent.appendChild(createIcon('fas fa-cat'));
+insertLineBreak(domIconComponent);
+domIconComponent.innerHTML += createIcon('fas fa-cat', true);
+
+/* -------------------------------------------------------------------------- */
+
+const buttonData = [
+  { label: 'Button 1' },                                       // With label
+  { label: 'Button 2', disabled: true },                       // With label + disabled
+  { icon: 'fas fa-cat', tooltip: 'Button 3' },                 // With icon
+  { icon: 'fas fa-cat', tooltip: 'Button 4', disabled: true }, // With icon + disabled
+  { label: 'Button 5', icon: 'fas fa-cat' },                   // With label + icon
+  { label: 'Button 6', icon: 'fas fa-cat', disabled: true },   // With label + icon + disabled
+];
+const domButtonComponent = createSection('Button Component');
+for (let i = 0; i < buttonData.length; i++) {
+  domButtonComponent.appendChild(createButton(buttonData[i]));
+  if (i < buttonData.length - 1) {
+    insertLineBreak(domButtonComponent);
+  }
+  
+}
+
+/* -------------------------------------------------------------------------- */
+
+const checkboxData = [
+  { label: 'Checkbox 1' },                                // With label
+  { label: 'Checkbox 2', checked: true },                 // With label + checked
+  { label: 'Checkbox 3', disabled: true },                // With label + disabled
+  { label: 'Checkbox 4', checked: true, disabled: true }, // With label + checked + disabled
+  { tooltip: 'Checkbox 1' },                                // Without label
+  { tooltip: 'Checkbox 2', checked: true },                 // Without label + checked
+  { tooltip: 'Checkbox 3', disabled: true },                // Without label + disabled
+  { tooltip: 'Checkbox 4', checked: true, disabled: true }, // Without label + checked + disabled
+
+];
+const domCheckboxComponent = createSection('Checkbox Component');
+for (let i = 0; i < checkboxData.length; i++) {
+  domCheckboxComponent.appendChild(createCheckbox(checkboxData[i]));
+  if (i < checkboxData.length - 1) {
+    insertLineBreak(domCheckboxComponent);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+const radioButtonData = [
+  { label: 'Radio Button A1', group: 'group-a' },
+  { label: 'Radio Button A2', group: 'group-a' },
+  { label: 'Radio Button A3', group: 'group-a', disabled: true },                // With disabled
+  { label: 'Radio Button A4', group: 'group-a', checked: true, disabled: true }, // With checked + disabled
+  { label: 'Radio Button B1', group: 'group-b' },
+  { label: 'Radio Button B2', group: 'group-b' },
+  { label: 'Radio Button B3', group: 'group-b', disabled: true },                // With disabled
+  { label: 'Radio Button B4', group: 'group-b', checked: true, disabled: true }, // With checked + disabled
+  
+];
+const domRadioButtonComponent = createSection('Radio Button Component');
+for (let i = 0; i < radioButtonData.length; i++) {
+  domRadioButtonComponent.appendChild(createRadioButton(radioButtonData[i]));
+  if (i < radioButtonData.length - 1) {
+    insertLineBreak(domRadioButtonComponent);
+  }
 }

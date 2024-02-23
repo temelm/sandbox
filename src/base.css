@@ -1,22 +1,18 @@
 :root {
-  --alpha: 0.15;
+  --border: var(--border-width) solid var(--color-border);
   --border-radius: 2px;
   --border-width: 1px;
-  --color-button-background: var(--color-primary);
-  --color-button-border: var(--color-primary);
-  --color-button-text: var(--color-light-text);
-  --color-dark-text: rgb(var(--color-dark-text-rgb));
-  --color-dark-text-rgb: 48, 48, 48;
-  --color-light-text: rgb(var(--color-light-text-rgb));
-  --color-light-text-rgb: 255, 255, 255;
-  --color-primary: rgb(var(--color-primary-rgb));
-  --color-primary-rgb: 0, 128, 128;
-  --color-secondary: rgb(var(--color-secondary-rgb));
-  --color-secondary-rgb: 252, 228, 65;
-  --font-family: sans-serif;
-  --space-md: 1rem;
-  --space-sm: 0.5rem;
-  --transition-duration:0.25s;
+
+  --color-clickable-input-hover-background: rgba(var(--color-text-rgb), 0.1);
+  --color-primary: hsl(180, 100%, 25%); /* teal */
+  --color-primary-shade: hsl(180, 100%, 20%);
+  --color-primary-tint: hsl(180, 100%, 30%);
+
+  --font-family: "Roboto", sans-serif;
+  --space-lg: calc(var(--space-md) * 1.5); /* 24px */
+  --space-md: 1rem; /* 16px */
+  --space-sm: calc(var(--space-md) * 0.5); /* 8px */
+  --transition-duration: 0.25s;
   --transition-timing-function: ease-in-out;
 
   background-color: var(--color-background-primary);
@@ -24,26 +20,26 @@
   text-rendering: optimizeLegibility;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-background-primary: rgb(240, 240, 240);
-    --color-background-secondary: rgb(255, 255, 255);
-    --color-clickable-hover-background: rgba(var(--color-dark-text-rgb), var(--alpha));
-    --color-text: var(--color-dark-text);
+:root[data-color-scheme="light"] {
+  --color-background-primary: hsl(0, 0%, 85%);
+  --color-background-secondary: hsl(0, 0%, 90%);
+  --color-border: hsl(0, 0%, 70%);
+  --color-button-hover-background: var(--color-primary-shade);
+  --color-text: black;
+  --color-text-rgb: 0, 0, 0;
 
-    color-scheme: light;
-  }
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background-primary: rgb(48, 48, 48);
-    --color-background-secondary: rgb(64, 64, 64);
-    --color-clickable-hover-background: rgba(var(--color-light-text-rgb), var(--alpha));
-    --color-text: var(--color-light-text);
+:root[data-color-scheme="dark"] {
+  --color-background-primary: hsl(0, 0%, 15%);
+  --color-background-secondary: hsl(0, 0%, 20%);
+  --color-border: hsl(0, 0%, 35%);
+  --color-button-hover-background: var(--color-primary-tint);
+  --color-text: white;
+  --color-text-rgb: 255, 255, 255;
 
-    color-scheme: dark;
-  }
+  color-scheme: dark;
 }
 
 * {
@@ -52,3 +48,15 @@
   margin: 0;
   padding: 0;
 }
+
+/*
+:root[data-color-scheme="light"] {
+  --color-clickable-hover-background: rgba(var(--color-dark-text-rgb), 0.1);
+  --primary-button-hover-lightness: 20%;
+}
+
+:root[data-color-scheme="dark"] {
+  --color-clickable-hover-background: rgba(var(--color-light-text-rgb), 0.1);
+  --primary-button-hover-lightness: 30%;
+}
+*/

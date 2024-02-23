@@ -1,3 +1,15 @@
+.radio-button {
+  display: none;
+}
+
+.radio-button:not(:checked) ~ .fa-dot-circle {
+  display: none;
+}
+
+.radio-button:checked ~ .fa-circle {
+  display: none;
+}
+
 .radio-button-label {
   align-items: center;
   border-radius: var(--border-radius);
@@ -15,19 +27,7 @@
 }
 
 .radio-button-label:not(:has(.radio-button:disabled)):hover {
-  background-color: var(--color-clickable-hover-background);
-}
-
-.radio-button {
-  display: none;
-}
-
-.radio-button:not(:checked) ~ .fa-dot-circle {
-  display: none;
-}
-
-.radio-button:checked ~ .fa-circle {
-  display: none;
+  background-color: var(--color-clickable-input-hover-background);
 }
 
 .radio-button-label span {

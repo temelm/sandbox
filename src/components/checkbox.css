@@ -1,31 +1,3 @@
-.checkbox-label {
-  align-items: center;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  display: inline-flex;
-  padding: var(--space-sm);
-  transition-duration: var(--transition-duration);
-  transition-property: background-color;
-  transition-timing-function: var(--transition-timing-function);
-}
-
-.checkbox-label:has(.checkbox:disabled) {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.checkbox-label:not(:has(.checkbox:disabled)):hover {
-  background-color: var(--color-clickable-hover-background);
-}
-
-.checkbox-label.light-checkbox {
-  color: var(--color-light-text);
-}
-
-.checkbox-label.light-checkbox:not(:has(.checkbox:disabled)):hover {
-  background-color: rgba(var(--color-light-text-rgb), var(--alpha));
-}
-
 .checkbox {
   display: none;
 }
@@ -36,6 +8,26 @@
 
 .checkbox:checked ~ .fa-square {
   display: none;
+}
+
+.checkbox-label {
+  align-items: center;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  display: inline-flex;
+  padding: var(--space-sm);
+  transition-duration: var(--transition-duration);
+  transition-property: background-color;
+  transition-timing-function: var(--transition-timing-function)
+}
+
+.checkbox-label:has(.checkbox:disabled) {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.checkbox-label:not(:has(.checkbox:disabled)):hover {
+  background-color: var(--color-clickable-input-hover-background);
 }
 
 .checkbox-label span {

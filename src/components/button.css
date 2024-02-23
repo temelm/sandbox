@@ -1,14 +1,15 @@
 .button {
   align-items: center;
-  background-color: var(--color-button-background);
-  border: var(--border-width) solid var(--color-button-border);
+  background-color: var(--color-primary);
+  border: var(--border-width) solid var(--color-primary);
   border-radius: var(--border-radius);
-  color: var(--color-button-text);
+  color: white;
   cursor: pointer;
   display: inline-flex;
-  padding: var(--space-sm) var(--space-md);
+  line-height: 1;
+  padding: var(--space-sm);
   transition-duration: var(--transition-duration);
-  transition-property: filter;
+  transition-property: background-color, border-color;
   transition-timing-function: var(--transition-timing-function);
 }
 
@@ -18,21 +19,8 @@
 }
 
 .button:not(:disabled):hover {
-  filter: brightness(calc(1 + var(--alpha)));
-}
-
-.button.icon-button {
-  padding: var(--space-sm);
-}
-
-.button.light-button {
-  background-color: var(--color-light-text);
-  border-color: var(--color-light-text);
-  color: var(--color-dark-text);
-}
-
-.button.light-button:not(:disabled):hover {
-  filter: brightness(calc(1 - var(--alpha)));
+  background-color: var(--color-button-hover-background);
+  border-color: var(--color-button-hover-background);
 }
 
 .button:has(i) span {
