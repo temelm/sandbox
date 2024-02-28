@@ -9,7 +9,7 @@ import { createIcon } from './icon.js';
  */
 export function createRadioButton (options = {}) {
   const {
-    label, group, id, checked, disabled, onChange, returnAsString
+    label, group, variant, id, checked, disabled, onChange, returnAsString
   } = options;
 
   if (!isNonEmptyString(label)) {
@@ -41,6 +41,9 @@ export function createRadioButton (options = {}) {
 
   const domLabel = document.createElement('label');
   domLabel.classList.add('radio-button-label');
+  if (variant === 'primary') {
+    domLabel.classList.add(`${variant}-radio-button`);
+  }
   domLabel.appendChild(domRadioButton);
   domLabel.appendChild(createIcon('fas fa-circle'));
   domLabel.appendChild(createIcon('fas fa-dot-circle'));
