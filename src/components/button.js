@@ -24,10 +24,7 @@ export function createButton (options = {}) {
 
   const domButton = document.createElement('button');
   domButton.classList.add('button');
-  // if (!isNonEmptyString(label)) {
-  //   domButton.classList.add('icon-button');
-  // }
-  if (variant === 'secondary') {
+  if (variant === 'primary') {
     domButton.classList.add(`${variant}-button`);
   }
   if (isNonEmptyString(id)) {
