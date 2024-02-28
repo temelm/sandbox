@@ -9,7 +9,7 @@ import { createIcon } from './icon.js';
  */
 export function createCheckbox (options = {}) {
   const {
-    label, tooltip, id, checked, disabled, onChange, returnAsString
+    label, tooltip, variant, id, checked, disabled, onChange, returnAsString
   } = options;
 
   if (!isNonEmptyString(label) && !isNonEmptyString(tooltip)) {
@@ -37,6 +37,9 @@ export function createCheckbox (options = {}) {
 
   const domLabel = document.createElement('label');
   domLabel.classList.add('checkbox-label');
+  if (variant === 'primary') {
+    domLabel.classList.add(`${variant}-checkbox`);
+  }
   if (isNonEmptyString(tooltip)) {
     domLabel.title = tooltip;
   }
