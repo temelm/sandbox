@@ -1,0 +1,9 @@
+#panel-header {
+  background-color: var(--color-primary-element-background);
+  left: 0;
+  padding: var(--space-sm);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
