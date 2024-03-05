@@ -3,6 +3,7 @@ import { createIcon } from './components/icon.js';
 import { createButton } from './components/button.js';
 import { createCheckbox } from './components/checkbox.js';
 import { createRadioButton } from './components/radio-button.js';
+import { createTextInput } from './components/text-input.js';
 import { createPanelHeader } from './components/panel-header.js';
 
 /* -------------------------------------------------------------------------- */
@@ -123,6 +124,20 @@ for (let i = 0; i < radioButtonData.length; i++) {
 
 /* -------------------------------------------------------------------------- */
 
-// createPanelHeader();
+const textInputData = [
+  { placeholder: 'Text Input 1' },
+  { placeholder: 'Text Input 2', disabled: true },
+];
+const domTextInputComponent = createSection('Text Input Component');
+for (let i = 0; i < textInputData.length; i++) {
+  domTextInputComponent.appendChild(createTextInput(textInputData[i]));
+  if (i < textInputData.length - 1) {
+    insertLineBreak(domTextInputComponent);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+createPanelHeader();
 
 /* -------------------------------------------------------------------------- */
