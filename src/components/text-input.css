@@ -1,0 +1,26 @@
+.text-input {
+  background-color: transparent;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+  outline: none;
+  padding: var(--space-xs) var(--space-sm);
+  transition-duration: var(--transition-duration);
+  transition-property: border-color;
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.text-input::placeholder {
+  color: var(--color-text);
+  opacity: 0.5; /* TODO: Review. */
+}
+
+.text-input:not(:disabled):focus {
+  border-color: var(--color-primary);
+}
+
+.text-input:disabled {
+  cursor: not-allowed;
+  opacity: var(--disabled-opacity);
+}
