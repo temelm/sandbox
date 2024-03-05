@@ -1,7 +1,7 @@
 import { isNonEmptyString } from '../utils.js';
 
 /**
- * @todo: Write documentation.
+ * TODO: Write documentation.
  * @param {string} name
  * @param {boolean} [returnAsString]
  * @returns {HTMLElement|string}

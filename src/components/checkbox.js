@@ -3,7 +3,7 @@ import { isNonEmptyString } from '../utils.js';
 import { createIcon } from './icon.js';
 
 /**
- * @todo: Write documentation.
+ * TODO: Write documentation.
  * @param {object} options
  * @returns {HTMLLabelElement|string}
  */
