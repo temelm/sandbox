@@ -38,7 +38,6 @@
 :root[data-color-scheme="light"] {
   --color-background-primary: hsl(0, 0%, 95%);
   --color-background-secondary: hsl(0, 0%, 100%);
-  /* --color-primary-element-border: hsl(180, 100%, 15%); */
   --color-text: var(--color-dark-text);
   --color-text-rgb: var(--color-dark-text-rgb);
 
@@ -48,7 +47,6 @@
 :root[data-color-scheme="dark"] {
   --color-background-primary: hsl(0, 0%, 20%);
   --color-background-secondary: hsl(0, 0%, 25%);
-  /* --color-primary-element-border: hsl(180, 100%, 35%); */
   --color-text: var(--color-light-text);
   --color-text-rgb: var(--color-light-text-rgb);
 
