@@ -1,4 +1,11 @@
 .button {
+  --color-button-background: transparent;
+  --color-button-border: var(--color-border);
+  --color-button-hover-background:
+    var(--color-interactive-element-hover-background);
+  --color-button-hover-border: var(--color-border);
+  --color-button-text: var(--color-text-primary);
+
   align-items: center;
   background-color: var(--color-button-background);
   border: var(--border-width) solid var(--color-button-border);
@@ -9,12 +16,13 @@
   font-size: var(--font-size-md);
   padding: var(--space-xs);
   transition-duration: var(--transition-duration);
-  transition-property: background-color;
+  transition-property: background-color, border-color;
   transition-timing-function: var(--transition-timing-function);
 }
 
 .button:not(:disabled):hover {
   background-color: var(--color-button-hover-background);
+  border-color: var(--color-button-hover-border);
 }
 
 .button:disabled {
@@ -27,11 +35,9 @@
 }
 
 .button.primary-button {
-  background-color: var(--color-primary-element-background);
-  border-color: var(--color-primary-element-border);
-  color: var(--color-primary-element-text);;
-}
-
-.button.primary-button:not(:disabled):hover {
-  background-color: var(--color-primary-element-border);
+  --color-button-background: var(--color-brand-primary);
+  --color-button-border: var(--color-brand-primary);
+  --color-button-hover-background: var(--color-brand-primary-shade);
+  --color-button-hover-border: var(--color-brand-primary-shade);
+  --color-button-text: var(--color-light-text-primary);
 }

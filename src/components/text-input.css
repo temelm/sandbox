@@ -2,7 +2,7 @@
   background-color: transparent;
   border: var(--border);
   border-radius: var(--border-radius);
-  color: var(--color-text);
+  color: var(--color-text-primary);
   font-size: var(--font-size-md);
   outline: none;
   padding: var(--space-xs) var(--space-sm);
@@ -12,12 +12,11 @@
 }
 
 .text-input::placeholder {
-  color: var(--color-text);
-  opacity: 0.5; /* TODO: Review. */
+  color: var(--color-text-secondary);
 }
 
 .text-input:not(:disabled):focus {
-  border-color: var(--color-primary);
+  border-color: var(--color-brand-primary);
 }
 
 .text-input:disabled {

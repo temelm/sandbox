@@ -5,8 +5,15 @@
 }
 
 .checkbox-label {
+  --color-checkbox-background: transparent;
+  --color-checkbox-hover-background:
+    var(--color-interactive-element-hover-background);
+  --color-checkbox-text: var(--color-text-primary);
+
   align-items: center;
+  background-color: var(--color-checkbox-background);
   border-radius: var(--border-radius);
+  color: var(--color-checkbox-text);
   cursor: pointer;
   display: inline-flex;
   padding: var(--space-xs);
@@ -17,7 +24,7 @@
 
 .checkbox-label:not(:has(.checkbox:disabled)):hover,
 .checkbox-label:has(.checkbox:checked) {
-  background-color: var(--color-selection-control-hover-background);
+  background-color: var(--color-checkbox-hover-background);
 }
 
 .checkbox-label:has(.checkbox:disabled) {
@@ -30,11 +37,7 @@
 }
 
 .checkbox-label.primary-checkbox {
-  background-color: var(--color-primary-element-background);
-  color: var(--color-primary-element-text);
-}
-
-.checkbox-label.primary-checkbox:not(:has(.checkbox:disabled)):hover,
-.checkbox-label.primary-checkbox:has(.checkbox:checked) {
-  background-color: var(--color-primary-element-border);
+  --color-checkbox-background: var(--color-brand-primary);
+  --color-checkbox-hover-background: var(--color-brand-primary-shade);
+  --color-checkbox-text: var(--color-light-text-primary);
 }
