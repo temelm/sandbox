@@ -1,6 +1,6 @@
 @import url("./base.css");
 
-section {
+body > main > section {
   background-color: var(--color-background-secondary);
   border-radius: var(--border-radius);
   margin: 48px;

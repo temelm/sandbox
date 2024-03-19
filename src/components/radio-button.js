@@ -1,6 +1,6 @@
 import './radio-button.css';
-import { isNonEmptyString } from '../utils.js';
 import { createIcon } from './icon.js';
+import { isNonEmptyString } from '../utils.js';
 
 /**
  * TODO: Write documentation.

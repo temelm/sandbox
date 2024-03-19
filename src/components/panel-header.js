@@ -1,7 +1,7 @@
 import './panel-header.css';
-import { createTextInput } from './text-input.js';
 import { createButton } from './button.js';
 import { createCheckbox } from './checkbox.js';
+import { createTextInput } from './text-input.js';
 
 /**
  * TODO: Write documentation.

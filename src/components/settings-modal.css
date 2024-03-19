@@ -1,0 +1,47 @@
+dialog {
+  background-color: var(--color-background-secondary);
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--color-text-primary);
+  left: 50%;
+  max-height: 90%;
+  max-width: 400px; /* TODO: Review max-width value. */
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  z-index: 2;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+dialog header,
+dialog section,
+dialog footer {
+  padding: var(--space-md);
+}
+
+dialog header,
+dialog section {
+  border-bottom: var(--border);
+}
+
+dialog header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+dialog footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+dialog footer div:first-child {
+  display: inline-flex;
+  flex-direction: column;
+}

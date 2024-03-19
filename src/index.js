@@ -5,6 +5,7 @@ import { createCheckbox } from './components/checkbox.js';
 import { createRadioButton } from './components/radio-button.js';
 import { createTextInput } from './components/text-input.js';
 import { createPanelHeader } from './components/panel-header.js';
+import { createSettingsModal } from './components/settings-modal.js';
 
 /* -------------------------------------------------------------------------- */
 
@@ -139,5 +140,12 @@ for (let i = 0; i < textInputData.length; i++) {
 /* -------------------------------------------------------------------------- */
 
 createPanelHeader();
+
+/* -------------------------------------------------------------------------- */
+
+createSettingsModal();
+document.getElementById('open-settings').addEventListener('click', () => {
+  document.getElementById('settings-modal').showModal();
+});
 
 /* -------------------------------------------------------------------------- */
