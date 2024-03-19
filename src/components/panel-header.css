@@ -1,0 +1,52 @@
+#panel-header {
+  background-color: var(--color-brand-primary);
+  padding: var(--space-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#panel-header nav {
+  column-gap: var(--space-sm);
+  display: flex;
+  justify-content: space-between;
+}
+
+#panel-header nav #nav-left,
+#panel-header nav #nav-right {
+  align-items: center;
+  column-gap: var(--space-sm);
+  display: inline-flex;
+}
+
+#panel-header nav #nav-right {
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 719px) { /* TODO: Review max-width value. */
+  #panel-header nav {
+    flex-direction: column;
+    row-gap: var(--space-sm);
+  }
+
+  #panel-header nav #nav-left,
+  #panel-header nav #nav-right {
+    justify-content: center;
+  }
+}
+
+/* Override styles for button and text input components. */
+
+#panel-header .button {
+  border-color: var(--color-brand-primary-shade);
+}
+
+#panel-header .text-input {
+  background-color: var(--color-light-text-primary);
+  border: none;
+  color: var(--color-dark-text-primary);
+}
+
+#panel-header .text-input::placeholder {
+  color: var(--color-dark-text-secondary);
+}

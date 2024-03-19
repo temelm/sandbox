@@ -1,0 +1,43 @@
+.radio-button,
+.radio-button:not(:checked) ~ .fa-dot-circle,
+.radio-button:checked ~ .fa-circle {
+  display: none;
+}
+
+.radio-button-label {
+  --color-radio-button-background: transparent;
+  --color-radio-button-hover-background:
+    var(--color-interactive-element-hover-background);
+  --color-radio-button-text: var(--color-text-primary);
+
+  align-items: center;
+  background-color: var(--color-radio-button-background);
+  border-radius: var(--border-radius);
+  color: var(--color-radio-button-text);
+  cursor: pointer;
+  display: inline-flex;
+  padding: var(--space-xs);
+  transition-duration: var(--transition-duration);
+  transition-property: background-color;
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.radio-button-label:not(:has(.radio-button:disabled)):hover,
+.radio-button-label:has(.radio-button:checked) {
+  background-color: var(--color-radio-button-hover-background);
+}
+
+.radio-button-label:has(.radio-button:disabled) {
+  cursor: not-allowed;
+  opacity: var(--disabled-opacity);
+}
+
+.radio-button-label span {
+  margin-left: var(--space-xs);
+}
+
+.radio-button-label.primary-radio-button {
+  --color-radio-button-background: var(--color-brand-primary);
+  --color-radio-button-hover-background: var(--color-brand-primary-shade);
+  --color-radio-button-text: var(--color-light-text-primary);
+}
